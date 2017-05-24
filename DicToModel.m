@@ -34,8 +34,8 @@ int arrayBegin=0;//查找字典中的键
     {
         return;
     }
-    id result = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
-    [self checkIsWhichClass:result modelClass:(Class) model];
+//    id result = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+    [self checkIsWhichClass:response modelClass:(Class) model];
 }
 //判断是字典还是数组
 - (void) checkIsWhichClass:(id) result modelClass:(Class) model
@@ -104,7 +104,8 @@ int arrayBegin=0;//查找字典中的键
 - (NSArray *) modelGetData:(id) response model:(__unsafe_unretained Class)model
 {
     [self modelGetWithID:response model:model];
-    [self.arrayMoelData removeObjectAtIndex:self.arrayMoelData.count-1];
+    //移除最后一个
+//    [self.arrayMoelData removeObjectAtIndex:self.arrayMoelData.count-1];
     return  [self.arrayMoelData copy];
 }
 - (NSMutableArray *)arrayMoelData
