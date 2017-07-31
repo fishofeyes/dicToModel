@@ -10,14 +10,11 @@
 
 @interface DicToModel : NSObject
 /**
- *  在获取json数据的时候，如果模型类出现key=id的情况。那你属性命名就可以为xxxid
- *  注意：如果出现包涵id的字段如：
-    data = {
-        id = 1,
-        pid = 2,
-        uid = 3
-    }
-    封装的模型属性名称不等于pid，uid就行了。
+ *  在获取json数据的时候，如果模型类出现
+    key=id的情况。      那你属性命名就可以为xxxid
+    description关键字   属性名称descriptionxxxx
+
+ *  @return 返回一个解析模型对象
  */
 +(DicToModel *) dicToModel;
 /**

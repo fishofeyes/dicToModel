@@ -67,12 +67,10 @@ int arrayBegin=0;//查找字典中的键
         {
             [modelData setValue:dic[OCName] forKey:OCName];
         }
-        else if([arrayKey containsObject:@"id"])
+        else if([arrayKey containsObject:@"id"] || [arrayKey containsObject:@"description"])
         {
-            if([OCName containsString:@"id"])
-            {
-                [modelData setValue:dic[@"id"] forKey:OCName];
-            }
+            if([OCName containsString:@"id"]) [modelData setValue:dic[@"id"] forKey:OCName];
+            if([OCName containsString:@"description"]) [modelData setValue:dic[@"description"] forKey:OCName];
         }
         else
         {
