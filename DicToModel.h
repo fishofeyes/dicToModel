@@ -24,6 +24,7 @@
  *  @param model    模型类，直接把所有需要的数据封装成属性
  *
  *  @return 返回封装好的模型类数组
+ *  注意：类的属性名称必须和数据的键的名称一样，这样才能找到对应的属性进行赋值。
  */
 - (NSArray *) modelGetData:(id) response model:(Class) model;
 @end
